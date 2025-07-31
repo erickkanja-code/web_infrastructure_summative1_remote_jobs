@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remote Roles for All</title>
+  <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+  <header class="top-banner">
+    <h1>Remote Roles for All</h1>
+    <p>Explore job opportunities with inclusive and ethical companies</p>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <input type="text" id="jobInput" placeholder="e.g. frontend, data, writer" />
+      <button id="jobSearchBtn">Search</button>
+    </section>
+
+    <section id="resultsArea"></section>
+  </main>
+
+  <div id="jobPopup" class="modal-box">
+    <div class="modal-content">
+      <span id="closePopup" class="close-button">&times;</span>
+      <div id="popupDetails"></div>
+    </div>
+  </div>
+
+  <footer class="bottom-footer">
+    <p>Powered by RemoteOK API | For remote job seekers everywhere</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

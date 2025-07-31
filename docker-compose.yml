@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  web-01:
+    build:
+      context: .
+      dockerfile: webserver.Dockerfile
+    container_name: web-01
+    ports:
+      - "2211:22"
+      - "8080:80"
+    networks:
+      lablan:
+        ipv4_address: 172.20.0.11
+
+  web-02:
+    build:
+      context: .
+      dockerfile: webserver.Dockerfile
+    container_name: web-02
+    ports:
+      - "2212:22"
+      - "8081:80"
+    networks:
+      lablan:
+        ipv4_address: 172.20.0.12
+
+  lb-01:
+    image: haproxy:latest
+    container_name: lb-01
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "2210:22"
+      - "8082:80"
+    networks:
+      lablan:
+        ipv4_address: 172.20.0.10
+
+networks:
+  lablan:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
