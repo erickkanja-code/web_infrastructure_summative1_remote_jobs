@@ -5,6 +5,8 @@
 
 This project shows how I deployed a simple web app inside Docker containers running on two separate web servers (called Web01 and Web02). To make sure traffic gets shared between them, I set up an HAProxy load balancer (Lb01) that sends requests back and forth evenly. The app itself grabs remote job listings from the RemoteOK API and shows them nicely.
 
+**DEMO VIDEO:** https://youtu.be/hdVcmU-E1Y0?si=bmAJi1CcGizFVbxy
+
 **Docker Hub Repo Details**
 
 **Docker Hub URL:** https://hub.docker.com/repository/docker/yourusername/remote-jobs-web
